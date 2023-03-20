@@ -5,9 +5,15 @@ module.exports = {
   extends: ["@cambly/eslint-config-syntax"],
   overrides: [
     {
-      files: ["*.ts", "*.tsx"],
+      files: ["*.{ts,tsx}"],
       parserOptions: {
         project: [path.join(__dirname, "tsconfig.json")],
+      },
+    },
+    {
+      files: ["*.stories.{ts,tsx}"],
+      rules: {
+        "@next/next/no-img-element": "off",
       },
     },
   ],
